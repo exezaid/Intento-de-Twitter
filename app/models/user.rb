@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   validates :email, :presence => true, :uniqueness => true
   validates :terms_of_service, :acceptance => true
   has_many :tweets
+  has_many :retweets
+  has_many :tweets_replicates, :through => :retweets, :source => :tweet
   has_many :mentions 
   has_many :network_tweets, :through => :mentions , :source => :tweet
   has_and_belongs_to_many :favorited_tweets , :class_name => "Tweet"
