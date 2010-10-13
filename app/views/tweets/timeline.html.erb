@@ -3,7 +3,7 @@
 <table>
 <% @all_tweets.each do |tweet| %>
   <tr>
-    <td><%= tweet.user.name %></td>
+    <td><%= link_to tweet.user.name, tweets_path(:user_id => tweet.user_id) %></td>
     <td><%= tweet.body %></td>
     <td><%= tweet.created_at %></td>
 
@@ -13,5 +13,4 @@
 </table>
 
 <br />
-
 
