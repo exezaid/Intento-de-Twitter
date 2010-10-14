@@ -9,6 +9,10 @@ class TweetsController < ApplicationController
   end
   def timeline
     @all_tweets = Tweet.order("created_at desc").limit(20)
-    
+
+  end
+  def rt
+    @user_rt = Retweet.where("user_id = ?", params[:user_id])
   end
 end
+

@@ -1,0 +1,17 @@
+<h1>RT</h1>
+
+<table>
+
+
+<% @user_rt.each do |retweet| %>
+  <tr>
+    <td><%= retweet.comment %></td>
+    <td><%= retweet.tweet_id %></td>
+
+
+  </tr>
+<% end %>
+</table>
+
+<br />
+
