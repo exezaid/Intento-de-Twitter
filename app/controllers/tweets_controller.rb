@@ -1,6 +1,5 @@
 class TweetsController < ApplicationController
   def index
-#    @user = User.find(params[:user_id])
     @tweets = Tweet.where("user_id = ?", params[:user_id] )
 
     respond_to do |format|
